@@ -1,0 +1,44 @@
+@page "/Chart"
+
+<RadzenChart>
+    <RadzenLineSeries Data="ChartData" CategoryProperty="Words" Title="@ChartTitle" ValueProperty="PToN">
+        <RadzenMarkers MarkerType="MarkerType.Circle" />
+    </RadzenLineSeries>
+    <RadzenCategoryAxis Padding="20" />
+    <RadzenValueAxis >
+        <RadzenGridLines Visible="true" />
+        <RadzenAxisTitle Text="positive to negetive words" />
+    </RadzenValueAxis>
+</RadzenChart>  
+
+
+@code {
+    [Parameter]
+    public DataItem[] ChartData {get;set;}
+
+    [Parameter]
+    public string ChartTitle {get;set;}
+}
+
+
+                                    @* 
+                                    <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">All Words</th>
+                                        <th scope="col">Positive words</th>
+                                        <th scope="col">Negetive Words</th>
+                                        <th scope="col">+/-</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">@SearchedBooks.FoundBook.BookName</th>
+                                        <td>@Datas.BookWordsCount</td>
+                                        <td>@Datas.BookPositiveWordsCount</td>
+                                        <td>@Datas.BookNegetiveWordsCount</td>
+                                        <td>@Datas.PToNPercent</td>
+                                        </tr>
+                                    </tbody>
+                                    </table> *@

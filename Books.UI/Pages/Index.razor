@@ -1,0 +1,135 @@
+﻿@page "/"
+@using Books.core
+@inject BookSearch SearchedBooks
+@inject PNWords PNWords
+
+<div class="container" style="margin: auto;">
+    <div class="row" style="margin-bottom: 100px;"></div>
+    
+    <div class="row">
+        <div class="col-5">
+            <EditForm  Model="@SearchedBooks" OnValidSubmit="OnFindBook" class="form-inline">
+                <DataAnnotationsValidator/>
+                <div class="form-group">
+                    <InputText class="form-control"  type="text" placeholder="Book Name To Search.." id="searchName" @bind-Value="SearchedBooks.WordToSearch"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Find</button>
+                <ValidationSummary/>
+            </EditForm>
+        </div>
+        <div class="col-7"></div>
+    </div>
+
+    @if(SearchedBooks.WordToSearch != null)
+    {
+        if(now == condition.HasSearched && SearchedBooks.FoundBook.BookName == "")
+        {
+            <div class="row" style="margin-bottom: 100px;"></div>
+            <div class="row">
+                <div class="col-5">
+                    <div class="card" style="width = 100%">
+                        <img src="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Sorry,Nothing Found!</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7"></div>
+            </div>
+        }
+        else
+        {
+            if(now == condition.HasSearched)
+            {
+                <div class="row" style="margin-bottom: 100px;"></div>
+                <div class="row">
+                    <div class="col-5">
+                        <div class="card" style="width = 100%">
+                            <img src="@SearchedBooks.FoundBook.PicPath" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">@SearchedBooks.FoundBook.BookName</h5>
+                                <p class="card-text">@SearchedBooks.ShowContent()</p>
+                                <button type="button" class="btn btn-info" @onclick="OnAnalyze">Analyze</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            if(now == condition.HasAnalaized)
+            {
+                <div class="row" style="margin-bottom: 100px;"></div>
+                <div class="row">
+                    <div class="col-5">
+                        <div class="card" style="width = 100%">
+                            <img src="@SearchedBooks.FoundBook.PicPath" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">@SearchedBooks.FoundBook.BookName</h5>
+                                <p class="card-text">@SearchedBooks.ShowContent()</p>
+                                <button type="button" class="btn btn-info" @onclick="OnAnalyze">Analyze</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+
+                        <RadzenTabs>
+                            <Tabs>
+                                <RadzenTabsItem Text="Chart">
+                                    <ChartComponent ChartData="@Datas.Chart" ChartTitle="@SearchedBooks.FoundBook.BookName" ></ChartComponent>
+                                </RadzenTabsItem>
+
+                                <RadzenTabsItem Text="Grid">
+                                    <GridComponent RowTitles="@rowTitels" Rows="@rows"></GridComponent>
+                                </RadzenTabsItem>
+                            </Tabs>
+                        </RadzenTabs>
+
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>
+
+
+@code {
+    condition now = condition.ToBeSearched;
+    protected override void OnInitialized()
+    {
+        SearchedBooks = new BookSearch();
+        PNWords = new PNWords();
+    }
+    AnalyzingBook Datas;
+    private void OnFindBook()
+    {
+        now = condition.HasSearched;
+        SearchedBooks.SearchBookName(SearchedBooks.WordToSearch);
+        Analyze();
+    }
+
+    string[] rowTitels;
+    string[][] rows;
+    public async void Analyze()
+    {
+        Datas = new AnalyzingBook(SearchedBooks.FoundBook , PNWords);
+        Task t1 = Datas.CountBookPNWords(SearchedBooks.FoundBook);
+        Task t2 = Datas.EachTenTousond(SearchedBooks.FoundBook);
+        await Task.WhenAll(new[]{t1,t2});
+        Datas.PToNPercent = Math.Round((double)(Datas.BookPositiveWordsCount)/(double)(Datas.BookNegetiveWordsCount), 4);
+
+        rowTitels = new[]{SearchedBooks.FoundBook.BookName};
+        rows = new[]{
+            new []{
+                Datas.BookWordsCount.ToString(),
+                Datas.BookPositiveWordsCount.ToString(),
+                Datas.BookNegetiveWordsCount.ToString(),
+                Datas.PToNPercent.ToString()
+            }
+        };
+    }
+    public void OnAnalyze()
+    {
+        now = condition.HasAnalaized;
+    }
+
+    enum condition {ToBeSearched , HasSearched , HasAnalaized}
+}

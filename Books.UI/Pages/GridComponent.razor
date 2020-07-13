@@ -1,0 +1,45 @@
+@page "/Grid"
+
+    <table class="table">
+    <thead class="thead-dark">
+        <tr>
+            @foreach (string headTitle in HeadTitles)
+            {
+                <th scope="col">@headTitle</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @for(int i=0 ; i<RowTitles.Length ; i++)
+            {
+                <th scope="row">@RowTitles[i]</th>
+                @foreach (string item in Rows[i])
+                {
+                    <td>@item</td>
+                }
+            }
+        </tr>
+    </tbody>
+    </table>
+
+
+@code {
+    [Parameter]
+    public string[] HeadTitles {get;set;} = new[]
+    {
+        "Name",
+        "All Words",
+        "Positive words",
+        "Negetive Words",
+        "+/-"
+    };
+
+    [Parameter]
+    public string[] RowTitles {get;set;}
+
+    [Parameter]
+    public string[][] Rows {get;set;}
+}
+
+
