@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj": {}
+    "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj": {}
   },
   "projects": {
-    "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj": {
+    "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj",
+        "projectUniqueName": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj",
         "projectName": "Books.core",
-        "projectPath": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj",
+        "projectPath": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\obj\\",
+        "outputPath": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config"

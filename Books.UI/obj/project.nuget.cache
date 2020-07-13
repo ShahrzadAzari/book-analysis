@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sUFcSv2bl5W2dSGGxIi/69UIHVWZzVPncl5v1KzCSDGHJNY5flI1LGp06MssDQU5f+S7wabBNCXufw43AvCdMg==",
+  "dgSpecHash": "YnYLH0044nTmr+rx/tgD7YBBDaVaRh6QwHmUWZjtgG2/1uLicDFFApQMA3Rg4Tx5oqGRGGY8KsREpvqog/tXuw==",
   "success": true,
-  "projectFilePath": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj",
+  "projectFilePath": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.0\\microsoft.aspnetcore.authorization.3.1.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.components\\3.1.0\\microsoft.aspnetcore.components.3.1.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj": {}
+    "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj": {}
   },
   "projects": {
-    "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj": {
+    "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj",
+        "projectUniqueName": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj",
         "projectName": "Books.core",
-        "projectPath": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj",
+        "projectPath": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\obj\\",
+        "outputPath": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -54,14 +54,14 @@
         }
       }
     },
-    "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj": {
+    "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj",
+        "projectUniqueName": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj",
         "projectName": "Books.UI",
-        "projectPath": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj",
+        "projectPath": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\Books.UI.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\obj\\",
+        "outputPath": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -75,8 +75,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj": {
-                "projectPath": "C:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj"
+              "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj": {
+                "projectPath": "c:\\git\\AP98992\\TA\\AW16\\BooksWebApp\\Books.core\\Books.core.csproj"
               }
             }
           }

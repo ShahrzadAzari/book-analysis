@@ -21,14 +21,18 @@ namespace Books.core
         public void SearchBookName(string wordToSearch)
         {
             var allFiles =Directory.EnumerateFiles(SearshPath);
+
             foreach(string f in allFiles)
             {
                 int startIndex = f.LastIndexOf(@"\");
                 int lastIndex = f.IndexOf(".txt");
-                string bookName = f.Substring(startIndex+1,lastIndex-startIndex-1);
-                
-                if(bookName.Contains(wordToSearch.ToLower()))
+                string bookName = f.Substring(startIndex+1,lastIndex-startIndex-1).ToLower();
+                bool founded = false;
+                if(!founded && bookName.Contains(wordToSearch.ToLower()))
+                {
+                    founded = true;
                     this.FoundBook = new Book(bookName);
+                }
             }
         }
         public string ShowContent()
