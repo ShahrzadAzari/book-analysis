@@ -12,7 +12,7 @@ jobs:
     
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
     - name: Add .nojekyll file
-      run: touch release/wwwroot/.nojekyll
+      run: touch Books.UI/wwwroot/.nojekyll
       
     # uses GitHub's checkout action to checkout code form the master branch
     - uses: actions/checkout@v2
