@@ -10,10 +10,6 @@ jobs:
     
     steps:
     
-#     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
-#     - name: Add .nojekyll file
-#       run: touch Books.UI/wwwroot/.nojekyll
-      
     # uses GitHub's checkout action to checkout code form the master branch
     - uses: actions/checkout@v2
       
@@ -30,6 +26,10 @@ jobs:
     # changes the base-tag in index.cshtml from '/' to 'book-analysis' to match GitHub Pages repository subdirectory
     - name: Change base-tag in _Host.cshtml from / to book-analysis
       run: sed -i 's/<base href="~\/" \/>/<base href="~\/book-analysis\/" \/>/g' Books.UI/Pages/_Host.cshtml
+      
+    # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
+    - name: Add .nojekyll file
+      run: touch Books.UI/wwwroot/.nojekyll
       
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.5.9
